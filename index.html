@@ -6,21 +6,31 @@
   <title>Ký ức của tôi</title>
   <!--<link rel="stylesheet" type="text/css" href="css/bird.css">-->
   <style type="text/css" media="screen">
+    main {
+      width: 100%;
+    }
     .container {
       width: 90%;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 30% auto;
     }
     .me {
       position: absolute;
       top: 56px;
       left: 88px;
     }
+    .under {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .left, .mid, .right {
+      width: 25%;
+    }
   </style>
 
   <script>
 	if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-  	window.location.replace("https://m.kyuc.me/index-2.html");
+  	window.location.replace("https://kyuc.me/indexm.html");
 	}
   </script>
 </head>
@@ -29,12 +39,20 @@
   <main>
     <img class="me" src="http://cloud.i-vn.de:21310/img-kyuc/birds/Bbird.gif">
     <div class="container">
-      <video playsinline>
+      <video autoplay playsinline>
         <source src="http://cloud.i-vn.de:21310/img-kyuc/birds/CrazySingingBirdSLY.mp4" type="video/mp4" />
       </video>
     </div>
-    <div>
+    <div class="under">
+      <div class="left">
+      </div>
+      <div class="mid">
+        <quote>Thứ miễn phí tự nhiên từ trên trời rơi xuống, ngoài nước mắt của trời, chỉ có cứt chim</quote>
+      </div>
+      <div class="right">
+        <img class="join" src="http://cloud.i-vn.de:21310/img-kyuc/birds/wakeup.gif">
+      </div>
+    </div>  
   </main>
 </body>
-</html>  
-
+</html>
