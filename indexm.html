@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ký ức của tôi</title>
+  <!--<link rel="stylesheet" type="text/css" href="css/bird.css">-->
+  <style type="text/css" media="screen">
+    main {
+      width: 100%;
+      font-size: 18px;
+    }
+    .container {
+      width: 96%;
+      margin-top: 39%;
+      margin-left: auto;
+      margin-right: auto;	    
+    }
+    #metThuong {
+      position: relative;
+      top: 0;
+      left: 38px;
+      height: 55px;
+      width: auto;
+
+    }	  
+    .me {
+      position: relative;
+      top: 56px;
+      left: 88px;
+    }
+    .under {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .left, .right {
+      width: 30%;
+    }
+    .left:hover, .right:hover {
+      width: 70%;
+    }
+  </style>
+</head>
+  
+<body class="theme-bird">
+  <main>
+    <div id="Thuong" onclick="ask('Thuong')">
+	<div id="metThuong"></div>
+	<img class="me" src="media/Bbird.gif">
+    </div>
+    <div class="container">
+      <video autoplay onplay="handleFirstPlay(event)" playsinline controls width="100%">
+        <source src="media/CrazySingingBirdSLY.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="under">
+      <div class="left">
+        <quote>Thứ miễn phí tự nhiên từ trên trời rơi xuống, ngoài nước mắt của trời, chỉ có cứt chim</quote>
+      </div>
+      <div class="right">
+        <img class="join" src="media/Wakeup.gif">
+      </div>
+    </div>  
+  </main>
+	<script>
+	let thuong = document.getElementById('metThuong');
+	function ask(name) {
+		switch (name) {
+			case 'Thuong':
+				thuong.innerHTML = "Hi! Are you my family or my friend?<button type='button' onclick='choose(1)' >Yes</button><button type='button' onclick='choose(0)' >No</button>";
+				var button = document.createElement('button').
+				button.onclick = function(yesno){
+				  if (yesno ==1) {thuong.innerHTML = "Nice :D";}
+				  else {thuong.innerHTML = "...";}
+				}
+				break;
+			default:
+				break;
+		}
+	}
+	let hasPlayed = false;
+	function handleFirstPlay(event) {
+	  if (!hasPlayed) {
+	    hasPlayed = true;
+	    const vid = event.target;
+	    vid.onplay = null;
+	  }
+	}
+	</script>
+</body>
+</html>
