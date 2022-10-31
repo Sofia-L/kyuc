@@ -15,8 +15,16 @@
       margin-left: auto;
       margin-right: auto;	    
     }
+    #metThuong {
+      position: relative;
+      top: 0;
+      left: 38px;
+      height: 55px;
+      width: auto;
+
+    }	  
     .me {
-      position: absolute;
+      position: relative;
       top: 56px;
       left: 88px;
     }
@@ -27,6 +35,9 @@
     }
     .left, .mid, .right {
       width: 25%;
+    }
+    .left:hover, .mid:hover, .right:hover {
+      width: 50%;
     }
   </style>
 
@@ -39,13 +50,13 @@
   
 <body class="theme-bird">
   <main>
-    <div id="Thuong">
+    <div id="Thuong" onclick="ask('Thuong')">
 	<div id="metThuong"></div>
-	<img class="me" src="https://cloud.i-vn.de:21310/img-kyuc/birds/Bbird.gif">
+	<img class="me" src="media/Bbird.gif">
     </div>
     <div class="container">
       <video autoplay onplay="handleFirstPlay(event)" playsinline controls width="100%">
-        <source src="https://cloud.i-vn.de:21310/img-kyuc/birds/CrazySingingBirdSLY.mp4" type="video/mp4" />
+        <source src="media/CrazySingingBirdSLY.mp4" type="video/mp4" />
       </video>
     </div>
     <div class="under">
@@ -55,11 +66,21 @@
         <quote>Thứ miễn phí tự nhiên từ trên trời rơi xuống, ngoài nước mắt của trời, chỉ có cứt chim</quote>
       </div>
       <div class="right">
-        <img class="join" src="https://cloud.i-vn.de:21310/img-kyuc/birds/wakeup.gif">
+        <img class="join" src="media/wakeup.gif">
       </div>
     </div>  
   </main>
 	<script>
+	let thuong = Document.getElementById('metThuong');
+	function ask(name) {
+		swicht (name) {
+			case 'Thuong':
+				thuong.innerHTML = "Hi! Are you my family or my friend?";
+				break;
+			default:
+				break;
+		}
+	}
 	let hasPlayed = false;
 	function handleFirstPlay(event) {
 	  if (!hasPlayed) {
