@@ -11,7 +11,9 @@
     }
     .container {
       width: 90%;
-      margin: 30% auto;
+      margin-top: 30%;
+      margin-left: auto;
+      margin-right: auto;	    
     }
     .me {
       position: absolute;
@@ -37,10 +39,13 @@
   
 <body class="theme-bird">
   <main>
-    <img class="me" src="http://cloud.i-vn.de:21310/img-kyuc/birds/Bbird.gif">
+    <div id="Thuong">
+	<div id="metThuong"></div>
+	<img class="me" src="https://cloud.i-vn.de:21310/img-kyuc/birds/Bbird.gif">
+    </div>
     <div class="container">
-      <video autoplay playsinline>
-        <source src="http://cloud.i-vn.de:21310/img-kyuc/birds/CrazySingingBirdSLY.mp4" type="video/mp4" />
+      <video autoplay onplay="handleFirstPlay(event)" playsinline controls width="100%">
+        <source src="https://cloud.i-vn.de:21310/img-kyuc/birds/CrazySingingBirdSLY.mp4" type="video/mp4" />
       </video>
     </div>
     <div class="under">
@@ -50,9 +55,19 @@
         <quote>Thứ miễn phí tự nhiên từ trên trời rơi xuống, ngoài nước mắt của trời, chỉ có cứt chim</quote>
       </div>
       <div class="right">
-        <img class="join" src="http://cloud.i-vn.de:21310/img-kyuc/birds/wakeup.gif">
+        <img class="join" src="https://cloud.i-vn.de:21310/img-kyuc/birds/wakeup.gif">
       </div>
     </div>  
   </main>
+	<script>
+	let hasPlayed = false;
+	function handleFirstPlay(event) {
+	  if (!hasPlayed) {
+	    hasPlayed = true;
+	    const vid = event.target;
+	    vid.onplay = null;
+	  }
+	}
+	</script>
 </body>
 </html>
