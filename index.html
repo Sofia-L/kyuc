@@ -71,13 +71,22 @@
     </div>  
   </main>
 	<script>
-	let thuong = Document.getElementById('metThuong');
+	var thuong = document.getElementById('metThuong');
 	function ask(name) {
 		switch (name) {
 			case 'Thuong':
-				thuong.innerHTML = "Hi! Are you my family or my friend?<button type='button' onclick='choose(1)' >Yes</button><button type='button' onclick='choose(0)' >No</button>";
-				var button = document.createElement('button').
-				button.onclick = function(yesno){
+				thuong.innerHTML = "Hi! Are you my family or my friend?";
+				let div = document.createElement('div');
+				let button1 = document.createElement('button');
+				button1.appendChild(document.createTextNode("Yes"));
+				button1.setAttribute('onclick','choose(1)');
+				let button0 = document.createElement('button');
+				button0.appendChild(document.createTextNode("No"));
+				button0.setAttribute('onclick','choose(0)');
+				div.appendChild(button1);
+				div.appendChild(button0);
+				thuong.appendChild(div);
+				function choose(yesno) {
 				  if (yesno ==1) {thuong.innerHTML = "Nice :D";}
 				  else {thuong.innerHTML = "...";}
 				}
